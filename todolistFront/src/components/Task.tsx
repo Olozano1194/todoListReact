@@ -4,7 +4,7 @@ import ListTask from "./ListTask";
 const Task = () => {
 
     return (
-        <main className="w-[90%] py-6 px-4 bg-gray-100 rounded-xl md:w-[75%] lg:w-[60%]">
+        <main className="w-full flex flex-col justify-center items-center py-6 px-4 bg-gray-100 rounded-xl md:px-8">
             <CreateTask />
             < ListTask />
         </main>
