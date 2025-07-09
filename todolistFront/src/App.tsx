@@ -1,5 +1,7 @@
 import {BrowserRouter, Routes, Route } from 'react-router-dom';
 import Task from "./components/Task";
+//Notificaciones
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   
@@ -9,7 +11,9 @@ function App() {
       <BrowserRouter>
         <Routes>          
           <Route path="/" element={<Task  />} />
-          </Routes>        
+          <Route path="Task/:id" element={<Task />} />
+        </Routes>
+        < Toaster />        
       </BrowserRouter>
       
     </>

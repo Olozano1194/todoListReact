@@ -33,4 +33,46 @@ export const CreateTask = async (task: CreateTaskDto ) => {
     }
 }
 
+export const ListTask = async (): Promise<TaskModel[]> => {
+    try {
+        const response = await taskApi.get<TaskModel[]>('/Task/');
+        //console.log('Api response structure:', response.data);
+        
+        return response.data;
+        
+    } catch (error) {
+        throw handleApiError(error);        
+    }
+};
 
+export const GetTask = async (id: number): Promise<TaskModel> => {
+    try {
+        const response = await taskApi.get<TaskModel>(`/Task/${id}/`);
+        return response.data;
+        
+    } catch (error) {
+        throw handleApiError(error);        
+    }
+};
+
+export const UpdateTask = async (id: number, task: CreateTaskDto): Promise<TaskModel> => {
+    try {
+        const response = await taskApi.put<TaskModel>(`/Task/${id}/`, task );
+        return response.data;
+        
+    } catch (error) {
+        throw handleApiError(error);       
+    }    
+}
+
+export const DeleteTask = async (id: number): Promise<void> => {
+    try {
+        const response = await taskApi.delete(`/Task/${id}/`);
+        //console.log('API Response:', response.data);
+        
+        return response.data;
+        
+    } catch (error) {
+        throw handleApiError(error);        
+    }    
+}
