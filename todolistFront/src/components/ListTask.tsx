@@ -77,7 +77,7 @@ const ListTasks = () => {
     };
 
     return (
-        <main className="w-full grid grid-cols-1 grid-rows-3 p-2 text-lg md:text-xl xl:text-2xl">
+        <main className="w-full grid grid-cols-1 auto-rows-auto p-2 text-lg md:text-xl xl:text-2xl">
             <div className="mb-4.5">
                 <p>
                     Te quedan <span className="font-bold text-xl text-green-500 md:text-2xl">{tasks.filter(task => !task.completed).length}</span> tareas por hacer
@@ -88,7 +88,7 @@ const ListTasks = () => {
                     <form key={task.id} className="w-full flex justify-between">                
                         <label 
                             htmlFor={`task-${task.id}`} 
-                            className={`flex gap-2 items-center transition-all duration-300 ${
+                            className={`cursor-pointer flex gap-2 items-center transition-all duration-300 ${
                                 task.completed
                                     ? 'line-through text-gray-500 opacity-75'
                                     : 'text-current opacity-100'
@@ -99,7 +99,7 @@ const ListTasks = () => {
                                 id={`task-${task.id}`}
                                 checked={task.completed}
                                 onChange={() => handleToggleComplete(task)} 
-                                className="appearance-none w-3 h-3 border border-gray-600 cursor-pointer rounded-full checked:bg-green-500 checked:border-transparent relative"
+                                className="appearance-none w-3 h-3 border border-gray-600 rounded-full checked:bg-green-500 checked:border-transparent relative"
                             />
                             {task.description}
                         </label>
