@@ -77,7 +77,7 @@ const ListTasks = () => {
     };
 
     return (
-        <main className="w-full grid grid-cols-1 auto-rows-auto p-2 text-lg md:text-xl xl:text-2xl">
+        <main className="w-full grid grid-cols-1 auto-rows-auto max-h-[400px] overflow-y-auto p-2 text-lg md:text-xl xl:text-2xl">
             <div className="mb-4.5">
                 <p>
                     Te quedan <span className="font-bold text-xl text-green-500 md:text-2xl">{tasks.filter(task => !task.completed).length}</span> tareas por hacer
